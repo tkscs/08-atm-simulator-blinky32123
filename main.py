@@ -13,7 +13,24 @@ Options:
     don't deposit a negative amount
 - loop (with a while loop) until the user says "exit"
 """
-
 # start with 1 million dollars
-balance = 1000000
 
+balance=1000000
+
+while balance >= 0:
+    x = input("would you like to withdraw, deposit, checkbalance, or exit:")
+    print(x)
+    if x == "withdraw": 
+        withdraw =int(input("how much would you like to withdraw "))
+        balance = balance - withdraw
+        print( "your new balance is: ", balance)
+    elif x == "deposit":
+        deposit = int(input("how much would you like to deposit"))
+        balance = balance + deposit
+        print( "your new balance is: ", balance)
+    elif x == "checkbalance":
+        print("your balance is:", balance) 
+    elif x == "exit":
+        break
+    if balance<0:
+        print("BANKRUPT")
